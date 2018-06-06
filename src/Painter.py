@@ -1,9 +1,7 @@
 import tkinter as tk
+import message
 
 class Scribble:
-
-    def callback():
-        print("called the callback!")
 
     # ボタンが押された
     def on_pressed(self, event):
@@ -35,14 +33,14 @@ class Scribble:
         window.config(menu=menu)
         filemenu = tk.Menu(menu)
         menu.add_cascade(label="File", menu=filemenu)
-        filemenu.add_command(label="New", command=self.callback)
-        filemenu.add_command(label="Open...", command=self.callback)
+        filemenu.add_command(label="New", command=message.callback)
+        filemenu.add_command(label="Open...", command=message.callback)
         filemenu.add_separator()
-        filemenu.add_command(label="Exit", command=self.callback)
+        filemenu.add_command(label="Exit", command=message.callback)
 
         helpmenu = tk.Menu(menu)
         menu.add_cascade(label="Help", menu=helpmenu)
-        helpmenu.add_command(label="About...", command=self.callback)
+        helpmenu.add_command(label="About...", command=message.callback)
 
         #終了ボタン追加
         quit_button = tk.Button(window, text = "終了", command = window.quit)
